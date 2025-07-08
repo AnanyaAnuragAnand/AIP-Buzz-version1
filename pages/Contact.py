@@ -4,17 +4,17 @@ st.title("📧 Developer & Contact Information")
 st.write("""
 ### 👥 Developers:
 - **Ananya Anurag Anand**  
-  PhD Research Scholar  
+  Research Scholar, Dept. of Applied Sciences  
   Indian Institute of Information Technology, Allahabad  
   📧 ananyaanurag12@gmail.com / rss2022501@iiita.ac.in 
 
 - **Kaushik Urkude**  
-  PhD Research Scholar  
+  M.Tech. BI, Dept. of Applied Sciences  
   Indian Institute of Information Technology, Allahabad  
   📧 mbi2022012@iiita.ac.in  
 
 - **Sintu K Samanta**  
-  Associate Professor  
+  Assistant Professor, Dept. of Applied Sciences  
   Indian Institute of Information Technology, Allahabad  
   📧 samantasintu@iiita.ac.in  
 
