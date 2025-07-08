@@ -6,17 +6,17 @@ st.write("""
 - **Ananya Anurag Anand**  
   PhD Research Scholar  
   Indian Institute of Information Technology, Allahabad  
-  📧 ananyaanurag12@gmail.com  
+  📧 ananyaanurag12@gmail.com / rss2022501@iiita.ac.in 
 
 - **Kaushik Urkude**  
   PhD Research Scholar  
   Indian Institute of Information Technology, Allahabad  
-  📧 rss2022501@iiita.ac.in  
+  📧 mbi2022012@iiita.ac.in  
 
 - **Sintu K Samanta**  
   Associate Professor  
   Indian Institute of Information Technology, Allahabad  
-  📧 sintu@iiita.ac.in  
+  📧 samantasintu@iiita.ac.in  
 
 ---
 
