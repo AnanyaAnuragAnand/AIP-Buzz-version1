@@ -37,7 +37,7 @@ def extract_propy_features(sequence):
 # Streamlit interface
 st.title("🧬 Anti-Inflammatory Peptide Identification (AIPID)")
 
-user_sequence = st.text_area("Paste your peptide sequence (sequences to be at least 9 amino acids long to compute flexibility values) (single-letter amino acid codes only):")
+user_sequence = st.text_area("Paste your peptide sequence (sequence to be at least 10 amino acids long) (single-letter amino acid codes only):")
 
 if st.button("Predict"):
     if len(user_sequence.strip()) == 0:
