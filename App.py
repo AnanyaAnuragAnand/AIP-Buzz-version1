@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="AIPID - Anti-Inflammatory Peptide Identification",
-    page_icon="🧬",
+    page_icon="🧬↬∿🌀",
     layout="centered",
     initial_sidebar_state="expanded"
 )
@@ -18,13 +18,13 @@ from propy.CTD import CalculateC as calC, CalculateT as calT, CalculateD as calD
 model = pickle.load(open('aipid_model.pkl', 'rb'))
 
 # Title & subtitle
-st.markdown("<h1 style='text-align: center;'>🧬 Anti-Inflammatory Peptide Identification (AIPID)</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>	🧬↬∿🌀 Anti-Inflammatory Peptide Identification (AIPID)</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Paste your peptide sequence below (at least <b>10 amino acids</b>, single-letter codes only):</p>", unsafe_allow_html=True)
 
 # Centered layout for input
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
-    user_sequence = st.text_input("🧾 Enter Peptide Sequence", key="sequence_input")
+    user_sequence = st.text_input("➤ Enter Peptide Sequence", key="sequence_input")
 
 # Centered Predict button
 st.markdown("<br>", unsafe_allow_html=True)
