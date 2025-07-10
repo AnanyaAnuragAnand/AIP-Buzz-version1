@@ -33,7 +33,7 @@ st.markdown("""
     <p>
         AIPID is a machine learning tool designed to predict whether a peptide has anti-inflammatory properties 
         based on its amino acid sequence. It uses descriptors from <b>Biopython</b> and <b>Propy3</b> 
-        and is trained using a Random Forest model.
+        and is trained using a Random Forest model. The training datasets used in AIPID were carefully curated following motif analysis, ensuring that the model captures the most informative and biologically relevant patterns distinguishing anti-inflammatory peptides from non-functional ones. 
     </p>
     <p>
         Enter a peptide sequence (min. <b>10 amino acids</b>) below to get started.
