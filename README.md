@@ -1,4 +1,4 @@
-# 🧬 AIPID: Anti-Inflammatory Peptide Identification App
+# 🧬 AIPID: Anti-Inflammatory Peptide Identification Tool
 
 AIPID is a machine learning-based Streamlit web application designed to predict whether a given peptide sequence has anti-inflammatory properties. The model is trained on curated peptide datasets using a Random Forest classifier with features derived from Biopython and Propy3 descriptors.
 
