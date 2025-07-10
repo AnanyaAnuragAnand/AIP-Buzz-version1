@@ -1,4 +1,13 @@
 import streamlit as st
+
+st.set_page_config(
+    page_title="AIPID - Anti-Inflammatory Peptide Identification",
+    page_icon="🧬",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
+
+import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
