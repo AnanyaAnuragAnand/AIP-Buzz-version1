@@ -4,3 +4,4 @@ biopython
 propy3
 pandas
 numpy
+openpyxl
