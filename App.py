@@ -7,7 +7,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
@@ -17,9 +16,12 @@ from propy.CTD import CalculateC as calC, CalculateT as calT, CalculateD as calD
 # Load model
 model = pickle.load(open('aipid_model.pkl', 'rb'))
 
-# Title & subtitle
-st.markdown("<h1 style='text-align: center;'>	🧬↬∿🌀 Anti-Inflammatory Peptide Identification (AIPID)</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Paste your peptide sequence below (at least <b>10 amino acids</b>, single-letter codes only):</p>", unsafe_allow_html=True)
+# Symbols on top and title below
+st.markdown("""
+<div style='text-align: center; font-size: 36px;'>🧬 ↬ ∿ 🌀</div>
+<h1 style='text-align: center;'>Anti-Inflammatory Peptide Identification (AIPID)</h1>
+<p style='text-align: center;'>Paste your peptide sequence below (at least <b>10 amino acids</b>, single-letter codes only):</p>
+""", unsafe_allow_html=True)
 
 # Centered layout for input
 col1, col2, col3 = st.columns([1, 4, 1])
