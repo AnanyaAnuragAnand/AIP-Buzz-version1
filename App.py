@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="AIPID - Anti-Inflammatory Peptide Identification",
-    page_icon="🧬↬∿🌀",
+    page_icon="🧬",
     layout="centered",
     initial_sidebar_state="expanded"
 )
@@ -16,25 +16,52 @@ from propy.CTD import CalculateC as calC, CalculateT as calT, CalculateD as calD
 # Load model
 model = pickle.load(open('aipid_model.pkl', 'rb'))
 
-# Symbols on top and title below
+# --- Welcome Box ---
+st.markdown("""
+<style>
+    .intro-box {
+        background-color: #f0f2f6;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #4e7ddc;
+        font-size: 16px;
+        color: #333333;
+    }
+</style>
+<div class='intro-box'>
+    <h3>👋 Welcome to AIPID (Anti-Inflammatory Peptide Identification)</h3>
+    <p>
+        AIPID is a machine learning tool designed to predict whether a peptide has anti-inflammatory properties 
+        based on its amino acid sequence. It uses descriptors from <b>Biopython</b> and <b>Propy3</b> 
+        and is trained using a Random Forest model.
+    </p>
+    <p>
+        Enter a peptide sequence (min. <b>10 amino acids</b>) below to get started.
+    </p>
+</div>
+""", unsafe_allow_html=True)
+
+# --- Symbols and Title ---
 st.markdown("""
 <div style='text-align: center; font-size: 36px;'>🧬 ↬ ∿ 🌀</div>
 <h1 style='text-align: center;'>Anti-Inflammatory Peptide Identification (AIPID)</h1>
 <p style='text-align: center;'>Paste your peptide sequence below (at least <b>10 amino acids</b>, single-letter codes only):</p>
 """, unsafe_allow_html=True)
 
-# Centered layout for input
+# --- Input ---
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
     user_sequence = st.text_input("➤ Enter Peptide Sequence", key="sequence_input")
 
-# Centered Predict button
+    st.info("📌 Example: `KKLLDERVAKL` — use only standard 1-letter amino acid codes.")
+
+# --- Predict Button ---
 st.markdown("<br>", unsafe_allow_html=True)
 btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
 with btn_col2:
     predict_clicked = st.button("🔍 Predict")
 
-# --- Feature extraction ---
+# --- Feature Extraction ---
 def extract_protparam_features(sequence):
     protein_analysis = ProteinAnalysis(sequence)
     features = {
