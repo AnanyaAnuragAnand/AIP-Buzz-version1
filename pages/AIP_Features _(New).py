@@ -107,14 +107,28 @@ if "Net_Charge" in filtered_df.columns:
     ).properties(width=600, height=300)
     st.altair_chart(charge_chart, use_container_width=True)
 
-# Hydrophobicity vs pI Scatter
+import altair as alt
+import streamlit as st
+import pandas as pd
+
+# Example DataFrame for testing (remove if using your real df)
+# df = pd.DataFrame({
+#     "ID": ["P1", "P2"],
+#     "Name": ["Peptide1", "Peptide2"],
+#     "Hydrophobicity": [0.3, -0.5],
+#     "pI": [6.2, 8.5],
+#     "Reviewed_Status": ["Reviewed", "Unreviewed"]
+# })
+
+# Replace df with filtered_df if using your filtered data
 if "Hydrophobicity" in filtered_df.columns and "pI" in filtered_df.columns:
     st.subheader("🧪 Hydrophobicity vs Isoelectric Point (pI)")
+    
     scatter = alt.Chart(filtered_df).mark_circle(size=80).encode(
         x=alt.X("Hydrophobicity:Q", title="Hydrophobicity"),
         y=alt.Y("pI:Q", title="Isoelectric Point (pI)"),
-        color=alt.Color("Reviewed_Status:N", title="SwissProt Review Status"),  # Legend label
-        tooltip=["ID", "Hydrophobicity", "pI", "Name", "Reviewed_Status"]
+        color=alt.Color("Reviewed_Status:N", title="SwissProt Review Status"),
+        tooltip=["ID", "Name", "Hydrophobicity", "pI", "Reviewed_Status"]
     ).interactive().properties(width=600, height=400)
 
     st.altair_chart(scatter, use_container_width=True)
@@ -127,7 +141,7 @@ aa_df = pd.DataFrame(list(aa_counts.items()), columns=["AminoAcid", "Count"])
 st.subheader("🔡 Amino Acid Frequency")
 aa_bar = alt.Chart(aa_df).mark_bar().encode(
     x="AminoAcid:N",
-    y="Count:Q"
+    y="Count:Q",
     color="AminoAcid:N"
 ).properties(width=600)
 st.altair_chart(aa_bar, use_container_width=True)
