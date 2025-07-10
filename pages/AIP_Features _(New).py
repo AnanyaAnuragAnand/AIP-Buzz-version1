@@ -111,10 +111,12 @@ if "Net_Charge" in filtered_df.columns:
 if "Hydrophobicity" in filtered_df.columns and "pI" in filtered_df.columns:
     st.subheader("🧪 Hydrophobicity vs Isoelectric Point (pI)")
     scatter = alt.Chart(filtered_df).mark_circle(size=80).encode(
-        x="Hydrophobicity:Q",
-        y="pI:Q",
-        tooltip=["ID", "Hydrophobicity", "pI", "Name"]
+        x=alt.X("Hydrophobicity:Q", title="Hydrophobicity"),
+        y=alt.Y("pI:Q", title="Isoelectric Point (pI)"),
+        color=alt.Color("Reviewed_Status:N", title="SwissProt Review Status"),  # Legend label
+        tooltip=["ID", "Hydrophobicity", "pI", "Name", "Reviewed_Status"]
     ).interactive().properties(width=600, height=400)
+
     st.altair_chart(scatter, use_container_width=True)
 
 # Amino Acid Frequency Plot
@@ -126,6 +128,7 @@ st.subheader("🔡 Amino Acid Frequency")
 aa_bar = alt.Chart(aa_df).mark_bar().encode(
     x="AminoAcid:N",
     y="Count:Q"
+    color="AminoAcid:N"
 ).properties(width=600)
 st.altair_chart(aa_bar, use_container_width=True)
 
