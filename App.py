@@ -16,42 +16,40 @@ from propy.CTD import CalculateC as calC, CalculateT as calT, CalculateD as calD
 # Load model
 model = pickle.load(open('aipid_model.pkl', 'rb'))
 
-# --- Welcome Sections: AIP-Hub & AIPID ---
+# --- Custom Styles ---
 st.markdown("""
 <style>
-    .intro-box {
-        background-color: #f0f2f6;
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 5px solid #4e7ddc;
-        font-size: 16px;
-        color: #333333;
-        margin-bottom: 25px;
+    .welcome-banner {
+        background: linear-gradient(90deg, #e3f2fd 0%, #fce4ec 100%);
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        border-left: 8px solid #7b1fa2;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    .section-title {
-        font-size: 22px;
-        font-weight: bold;
-        color: #2c4b96;
+    .welcome-banner h2 {
+        color: #4a148c;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .welcome-banner p {
+        font-size: 16px;
+        color: #333;
     }
 </style>
 
-<div class='intro-box'>
-    <div class='section-title'>🔬 About AIP-Hub</div>
+<div class='welcome-banner'>
+    <h2>👋 Welcome to <b>AIP-Hub</b></h2>
     <p>
-        <b>AIP-Hub</b> is your one-stop platform for exploring and predicting anti-inflammatory peptides (AIPs).
-        This web-based tool allows you to browse curated AIPs, visualize their physicochemical profiles, and predict novel sequences.
-    </p>
-</div>
-
-<div class='intro-box'>
-    <div class='section-title'>🧠 About AIPID</div>
-    <p>
-        <b>AIPID</b> (Anti-Inflammatory Peptide Identification) is the prediction engine built into AIP-Hub.
-        It uses a Random Forest classifier trained on biologically curated peptide datasets, selected through motif analysis.
-        Sequence features are computed using <b>Biopython</b> and <b>Propy3</b> to ensure that only informative descriptors are considered.
+        Your gateway to Anti-Inflammatory Peptide discovery. AIP-Hub allows you to browse curated peptides, explore features,
+        and predict novel anti-inflammatory sequences using cutting-edge machine learning.
     </p>
     <p>
-        Enter a peptide sequence below (minimum <b>10 amino acids</b>) to check for anti-inflammatory potential.
+        Powered by <b>AIPID</b> (Anti-Inflammatory Peptide Identification), a Random Forest-based engine trained on 
+        motif-filtered, biologically relevant peptides using descriptors from <b>Biopython</b> and <b>Propy3</b>.
+    </p>
+    <p>
+        Enter a peptide sequence below to get started (minimum <b>10 amino acids</b>).
     </p>
 </div>
 """, unsafe_allow_html=True)
