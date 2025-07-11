@@ -1,15 +1,15 @@
 import streamlit as st
 
-st.title("📖 About AIPID – The Anti-Inflammatory Peptide Identification")
+st.title("📖 About AIP-Hub")
 
 st.write("""
-**AIPID** (Anti-Inflammatory Peptide Identification) is a web-based tool developed to accelerate the discovery and analysis of **anti-inflammatory peptides (AIPs)** using machine learning and peptide descriptors.
+**AIP-Hub** is your one-stop platform for exploring and predicting anti-inflammatory peptides (AIPs). This web-based tool allows you to browse curated AIPs, visualize their physicochemical profiles, and predict novel sequences.
 
 ---
 
 ### 🔬 Core Capabilities
 
-- 🧠 **AIP Prediction:**  
+- 🧠 **AIP Prediction using AIPID:**  
   Predict anti-inflammatory potential of peptide sequences using a Random Forest classifier trained on features extracted via Biopython and ProPy3, and datasets that were picked after motif analysis.
 
 - 🧬 **Feature Extraction:**  
