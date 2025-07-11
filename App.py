@@ -39,9 +39,9 @@ st.markdown("""
 </style>
 
 <div class='welcome-banner'>
-    <h2>👋 Welcome to <b>AIP-Hub</b></h2>
+    <h2>👋 Welcome to <b>AIP-Hub: Your Gateway to Anti-Inflammatory Peptide Discovery</b></h2>
     <p>
-        Your gateway to Anti-Inflammatory Peptide discovery. AIP-Hub allows you to browse curated peptides, explore features,
+        AIP-Hub allows you to browse curated peptides, explore features,
         and predict novel anti-inflammatory sequences using cutting-edge machine learning.
     </p>
     <p>
