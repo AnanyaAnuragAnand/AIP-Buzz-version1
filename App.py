@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="AIPID - Anti-Inflammatory Peptide Identification",
+    page_title="AIP-Hub: Your Gateway to Anti-Inflammatory Peptide Discovery",
     page_icon="🧬",
     layout="centered",
     initial_sidebar_state="expanded"
@@ -16,7 +16,7 @@ from propy.CTD import CalculateC as calC, CalculateT as calT, CalculateD as calD
 # Load model
 model = pickle.load(open('aipid_model.pkl', 'rb'))
 
-# --- Welcome Box ---
+# --- Welcome Sections: AIP-Hub & AIPID ---
 st.markdown("""
 <style>
     .intro-box {
@@ -26,17 +26,32 @@ st.markdown("""
         border-left: 5px solid #4e7ddc;
         font-size: 16px;
         color: #333333;
+        margin-bottom: 25px;
+    }
+    .section-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #2c4b96;
     }
 </style>
+
 <div class='intro-box'>
-    <h3>👋 Welcome to AIPID (Anti-Inflammatory Peptide Identification)</h3>
+    <div class='section-title'>🔬 About AIP-Hub</div>
     <p>
-        AIPID is a machine learning tool designed to predict whether a peptide has anti-inflammatory properties 
-        based on its amino acid sequence. It uses descriptors from <b>Biopython</b> and <b>Propy3</b> 
-        and is trained using a Random Forest model. The training datasets used in AIPID were carefully curated following motif analysis, ensuring that the model captures the most informative and biologically relevant patterns distinguishing anti-inflammatory peptides from non-functional ones. 
+        <b>AIP-Hub</b> is your one-stop platform for exploring and predicting anti-inflammatory peptides (AIPs).
+        This web-based tool allows you to browse curated AIPs, visualize their physicochemical profiles, and predict novel sequences.
+    </p>
+</div>
+
+<div class='intro-box'>
+    <div class='section-title'>🧠 About AIPID</div>
+    <p>
+        <b>AIPID</b> (Anti-Inflammatory Peptide Identification) is the prediction engine built into AIP-Hub.
+        It uses a Random Forest classifier trained on biologically curated peptide datasets, selected through motif analysis.
+        Sequence features are computed using <b>Biopython</b> and <b>Propy3</b> to ensure that only informative descriptors are considered.
     </p>
     <p>
-        Enter a peptide sequence (min. <b>10 amino acids</b>) below to get started.
+        Enter a peptide sequence below (minimum <b>10 amino acids</b>) to check for anti-inflammatory potential.
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -48,11 +63,10 @@ st.markdown("""
 <p style='text-align: center;'>Paste your peptide sequence below (at least <b>10 amino acids</b>, single-letter codes only):</p>
 """, unsafe_allow_html=True)
 
-# --- Input ---
+# --- Input Box ---
 col1, col2, col3 = st.columns([1, 4, 1])
 with col2:
     user_sequence = st.text_input("➤ Enter Peptide Sequence", key="sequence_input")
-
     st.info("📌 Example: `KKLLDERVAKL` — use only standard 1-letter amino acid codes.")
 
 # --- Predict Button ---
@@ -61,7 +75,7 @@ btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
 with btn_col2:
     predict_clicked = st.button("🔍 Predict")
 
-# --- Feature Extraction ---
+# --- Feature Extraction Functions ---
 def extract_protparam_features(sequence):
     protein_analysis = ProteinAnalysis(sequence)
     features = {
@@ -86,7 +100,7 @@ def extract_propy_features(sequence):
     features.update(dictD)
     return features
 
-# --- Prediction ---
+# --- Prediction Logic ---
 if predict_clicked:
     sequence = user_sequence.strip().upper()
 
@@ -104,6 +118,7 @@ if predict_clicked:
             combined_features = {**propy_feats, **protparam_feats}
             df = pd.DataFrame([combined_features])
 
+            # Fill missing columns if any
             model_features = model.feature_names_in_
             for feature in model_features:
                 if feature not in df.columns:
