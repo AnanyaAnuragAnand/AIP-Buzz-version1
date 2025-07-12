@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="AIP-Hub: Your Gateway to Anti-Inflammatory Peptide Discovery",
+    page_title="AIP-Buzz: Your Gateway to Anti-Inflammatory Peptide Discovery",
     page_icon="🧬",
     layout="centered",
     initial_sidebar_state="expanded"
@@ -39,9 +39,9 @@ st.markdown("""
 </style>
 
 <div class='welcome-banner'>
-    <h2>👋 Welcome to <b>AIP-Hub: Your Gateway to Anti-Inflammatory Peptide Discovery</b></h2>
+    <h2>👋 Welcome to <b>AIP-Buzz: Your Gateway to Anti-Inflammatory Peptide Discovery</b></h2>
     <p>
-        AIP-Hub allows you to browse curated peptides, explore features,
+        AIP-Buzz allows you to browse curated peptides, explore features,
         and predict novel anti-inflammatory sequences using cutting-edge machine learning.
     </p>
     <p>
