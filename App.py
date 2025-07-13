@@ -74,15 +74,25 @@ with col2:
 #     predict_clicked = st.button("🔍 Click for Predict")
 
 
-# --- Predict Button ---
+# # --- Predict Button ---
+# st.markdown("<br>", unsafe_allow_html=True)
+# btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
+
+# with btn_col2:
+#     inner_col1, inner_col2 = st.columns([1, 1])  # Adjust ratio if needed
+#     with inner_col1:
+#         predict_clicked = st.button("🔍 Click for Predict")
+#     with inner_col2:
+#         st.markdown("⬇️ **Scroll down for results**", unsafe_allow_html=True)
+
 st.markdown("<br>", unsafe_allow_html=True)
-btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
+btn_col1, btn_col2, btn_col3 = st.columns([1, 6, 1])  # make center column wider
 
 with btn_col2:
-    inner_col1, inner_col2 = st.columns([1, 1])  # Adjust ratio if needed
-    with inner_col1:
+    b1, b2 = st.columns([1, 2])  # button and message inside center column
+    with b1:
         predict_clicked = st.button("🔍 Click for Predict")
-    with inner_col2:
+    with b2:
         st.markdown("⬇️ **Scroll down for results**", unsafe_allow_html=True)
 
 
