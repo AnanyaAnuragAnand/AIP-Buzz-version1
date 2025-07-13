@@ -71,7 +71,7 @@ with col2:
 st.markdown("<br>", unsafe_allow_html=True)
 btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
 with btn_col2:
-    predict_clicked = st.button("🔍 Click for Predict")
+    predict_clicked = st.button("🔍Predict")
 
 
 # # --- Predict Button ---
