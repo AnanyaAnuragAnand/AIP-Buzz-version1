@@ -1,15 +1,15 @@
 import streamlit as st
 
-st.title("📖 About AIP-Buzz")
+st.title("📖 About AIPID")
 
 st.write("""
-**AIP-Buzz** is your one-stop platform for exploring and predicting anti-inflammatory peptides (AIPs). This web-based tool allows you to browse curated AIPs, visualize their physicochemical profiles, and predict novel sequences.
+**AIPID** is your one-stop platform for exploring and predicting anti-inflammatory peptides (AIPs). This web-based tool allows you to browse curated AIPs, visualize their physicochemical profiles, and predict novel sequences.
 
 ---
 
 ### 🔬 Core Capabilities
 
-- 🧠 **AIP Prediction using AIPID:**  
+- 🧠 **AIP Prediction using AIPID's MAD-ML Model:**  
   Predict anti-inflammatory potential of peptide sequences using a Random Forest classifier trained on features extracted via Biopython and ProPy3, and datasets that were picked after motif analysis.
 
 - 🧬 **Feature Extraction:**  
