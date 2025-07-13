@@ -67,11 +67,25 @@ with col2:
     user_sequence = st.text_input("➤ Enter Peptide Sequence", key="sequence_input")
     st.info("📌 Example: `KKLLDERVAKL` — use only standard 1-letter amino acid codes.")
 
+# # --- Predict Button ---
+# st.markdown("<br>", unsafe_allow_html=True)
+# btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
+# with btn_col2:
+#     predict_clicked = st.button("🔍 Click for Predict")
+
+
 # --- Predict Button ---
 st.markdown("<br>", unsafe_allow_html=True)
 btn_col1, btn_col2, btn_col3 = st.columns([2, 1, 2])
+
 with btn_col2:
-    predict_clicked = st.button("🔍 Predict")
+    inner_col1, inner_col2 = st.columns([1, 1])  # Adjust ratio if needed
+    with inner_col1:
+        predict_clicked = st.button("🔍 Click for Predict")
+    with inner_col2:
+        st.markdown("⬇️ **Scroll down for results**", unsafe_allow_html=True)
+
+
 
 # --- Feature Extraction Functions ---
 def extract_protparam_features(sequence):
