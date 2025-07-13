@@ -45,7 +45,7 @@ st.markdown("""
         and predict novel anti-inflammatory sequences using cutting-edge machine learning.
     </p>
     <p>
-        Powered by <b>AIPID</b> (Anti-Inflammatory Peptide Identification), a Random Forest-based engine trained on 
+        Powered by <b>AIPID's MAD-ML model</b>, a Random Forest-based engine trained on 
         motif-filtered, biologically relevant peptides using descriptors from <b>Biopython</b> and <b>Propy3</b>.
     </p>
     <p>
@@ -57,7 +57,7 @@ st.markdown("""
 # --- Symbols and Title ---
 st.markdown("""
 <div style='text-align: center; font-size: 36px;'>🧬 ↬ ∿ 🌀</div>
-<h1 style='text-align: center;'>Anti-Inflammatory Peptide Identification (AIPID)</h1>
+<h2 style='text-align: center;'>MAD-ML-Based Anti-Inflammatory Peptide Identification (AIPID) Tool</h2>
 <p style='text-align: center;'>Paste your peptide sequence below (at least <b>10 amino acids</b>, single-letter codes only):</p>
 """, unsafe_allow_html=True)
 
