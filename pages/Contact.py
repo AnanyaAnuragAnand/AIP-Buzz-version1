@@ -2,7 +2,7 @@ import streamlit as st
 st.title("📧 Developer & Contact Information")
 
 st.write("""
-### 👥 Developers of AIP-Buzz:
+### 👥 Developers of AIPID:
 - **Ananya Anurag Anand**  
   Research Scholar, Dept. of Applied Sciences  
   Indian Institute of Information Technology, Allahabad  
