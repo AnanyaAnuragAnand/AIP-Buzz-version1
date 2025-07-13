@@ -41,7 +41,7 @@ st.markdown("""
 <div class='welcome-banner'>
     <h2>👋 Welcome to <b>AIPID: Your Gateway to Anti-Inflammatory Peptide Discovery</b></h2>
     <p>
-        AIPID allows you to browse curated peptides, explore features,
+        AIPID (Anti-Inflammatory Peptide Identification) server allows you to browse curated peptides, explore features,
         and predict novel anti-inflammatory sequences using cutting-edge machine learning.
     </p>
     <p>
